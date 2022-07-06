@@ -1,0 +1,5 @@
+{
+    "base_url": "https://free.currconv.com",
+    "endpoint_list_of_currencies": "/api/v7/currencies",
+    "endpoint_compact": "/api/v7/convert"
+}

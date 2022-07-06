@@ -1,0 +1,38 @@
+version: '3.3'
+services:
+    my_postgres:
+        container_name: my_postgres
+        ports:
+            - '65123:5432'
+        environment:
+            - POSTGRES_PASSWORD=admin
+        networks:
+            - internal_psql_bridge
+        image: postgres:13
+
+    my_python:
+        container_name: my_python
+        environment:
+            - my_secret_api_key=d1e47de8749c892e3b58
+            - am_i_in_docker=yes
+        networks:
+            - internal_psql_bridge
+        build: ./python
+        depends_on:
+            - "my_postgres"
+
+    pgadmin4:
+        container_name: my_pgadmin
+        ports:
+            - '65121:80'
+        environment:
+            - PGADMIN_DEFAULT_EMAIL=user@domain.com
+            - PGADMIN_DEFAULT_PASSWORD=admin
+        networks:
+            - internal_psql_bridge
+        image: dpage/pgadmin4
+
+networks:
+  internal_psql_bridge:
+    external: false
+    name: internal_psql_bridge
