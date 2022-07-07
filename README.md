@@ -47,16 +47,12 @@ Add server:
 
   save
   
-in my_python container navigate your terminal to:
-```
-cd app
-```
-run main.py
+in my_python container run main.py:
 ```
 python3 main.py -h
 ```
 ---
----
+
 # task:
 Create a CLI application that will prompt the user for a currency pair 
 and then print the exchange rate for that pair.
