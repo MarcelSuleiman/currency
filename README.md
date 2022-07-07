@@ -47,9 +47,9 @@ Add server:
 
   save
   
-in my_python navigate your terminal to
+in my_python container navigate your terminal to:
 ```
-cs app
+cd app
 ```
 run main.py
 ```
