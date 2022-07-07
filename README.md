@@ -46,6 +46,15 @@ Add server:
     - password: admin
 
   save
+  
+in my_python navigate your terminal to
+```
+cs app
+```
+run main.py
+```
+python3 main.py -h
+```
 ---
 ---
 # task:
